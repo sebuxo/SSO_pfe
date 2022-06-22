@@ -18,26 +18,10 @@ export default function App() {
           <Route path="/register" component={RegisterPage} />
           <Route path="/home" component={HomePage} />
         </Switch>
-        <Footer />
       </div>
     </Router>
   );
 }
-
-const Footer = () => {
-  return (
-    <p className="text-center" style={FooterStyle}>
-      Designed & coded by{" "}
-      <a
-        href="https://izemspot.netlify.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        IZEMSPOT
-      </a>
-    </p>
-  );
-};
 
 const FooterStyle = {
   background: "#222",

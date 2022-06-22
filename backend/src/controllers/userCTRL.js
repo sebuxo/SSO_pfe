@@ -5,9 +5,9 @@ const db = require("../db");
 const user = db.user;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
 exports.findUser = async (body) => {
   const userFound = await user.findOne({ where: { email: body.email } });
+  console.log(userFound);
   const passwordIsValid = bcrypt.compareSync(body.password, userFound.password);
   return passwordIsValid ? userFound : null;
 };
@@ -21,4 +21,3 @@ exports.createUser = async (body) => {
     return user.create(body);
   }
 };
-// Find a single Tutorial with an id

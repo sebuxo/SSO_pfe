@@ -1,16 +1,17 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../../App.css";
 
 export default function SignUpPage() {
+  const history = useHistory();
   async function create() {
     const data = await axios.post("http://localhost:8080/signup", {
       userName,
       email,
       password,
     });
-    console.log(data.map((e) => console.log(e)));
+    history.push("/login");
   }
   const [userName, setUserName] = React.useState("");
   const [email, setEmail] = React.useState("");
